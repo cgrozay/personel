@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -38,5 +39,9 @@ public class DepartmentController {
 	@PutMapping("/{id}")
 	public void update(UpdateDepartmentRequest updateDepartmentRequest) {
 		this.departmentService.update(updateDepartmentRequest);
+	}
+	@DeleteMapping("/{id}")
+	public void delete(int id) {
+		this.departmentService.delete(id);
 	}
 }

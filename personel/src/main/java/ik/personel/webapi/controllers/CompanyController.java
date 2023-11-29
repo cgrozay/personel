@@ -28,7 +28,7 @@ public class CompanyController {
 	@Autowired
 	private CompanyServices companyServices;
 	
-	@GetMapping("/getall")
+	@GetMapping()
 	public List<GetAllCompanyResponse> getAllCompanyResponses(){
 		return this.companyServices.getAllCompanyResponses();
 	}

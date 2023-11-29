@@ -45,4 +45,10 @@ public class DepartmentManager implements DepartmentService {
 
 	}
 
+	@Override
+	public void delete(int id) {
+		this.departmentRepository.deleteById(id);
+		
+	}
+
 }
