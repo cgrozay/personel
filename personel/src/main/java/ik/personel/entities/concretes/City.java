@@ -27,4 +27,6 @@ public class City {
 	private String cityName;
 	@OneToMany(mappedBy = "city")
 	List<Town> towns;
+	@OneToMany(mappedBy = "city")
+	List<Person> persons;
 }

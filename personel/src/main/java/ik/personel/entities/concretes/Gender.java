@@ -15,17 +15,17 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name = "titles")
+@Table(name = "genders")
 @AllArgsConstructor
 @NoArgsConstructor
-public class Title {
+public class Gender {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private int id;
-	@Column(name = "titlename")
-	private String titleName;
-	@OneToMany(mappedBy = "title")
+	@Column(name = "gendername")
+	private String genderName;
+	@OneToMany(mappedBy = "gender")
 	List<Person> persons;
 }
