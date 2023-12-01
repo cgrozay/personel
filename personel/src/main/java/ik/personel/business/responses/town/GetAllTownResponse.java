@@ -1,5 +1,6 @@
 package ik.personel.business.responses.town;
 
+import ik.personel.entities.concretes.City;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

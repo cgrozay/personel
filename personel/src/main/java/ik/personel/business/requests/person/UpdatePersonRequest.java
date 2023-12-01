@@ -2,6 +2,7 @@ package ik.personel.business.requests.person;
 
 import java.sql.Date;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,7 +16,7 @@ public class UpdatePersonRequest {
 	private String nameSurname;
 	private Date dateOfBirth;
 	private Date dateOfWork;
-	private int educationStatusId;
+	private int educationId;
 	private int schoolId;
 	private int departmentId;
 	private int discipline;

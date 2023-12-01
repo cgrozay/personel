@@ -16,6 +16,8 @@ import ik.personel.business.abstracts.PersonService;
 import ik.personel.business.requests.person.CreatePersonRequest;
 import ik.personel.business.requests.person.UpdatePersonRequest;
 import ik.personel.business.responses.person.GetAllPersonResponse;
+import ik.personel.business.responses.person.GetAllPersonsViewResponse;
+import ik.personel.business.responses.person.GetByNormIdPersonResponse;
 import lombok.AllArgsConstructor;
 
 @RestController
@@ -42,5 +44,13 @@ public class PersonController {
 	@DeleteMapping("/{id}")
 	public void delete(int id) {
 		this.personService.delete(id);
+	}
+	@GetMapping("/personsview")
+	List<GetAllPersonsViewResponse> getAllPersonsViewResponses(){
+		return this.personService.getAllPersonsViewResponses();
+	}
+	@GetMapping("/personview/{id}")
+	public List<GetByNormIdPersonResponse> getByNormIdPersonResponse(int id) {
+		return this.personService.getByNormIdPersonResponse(id);
 	}
 }

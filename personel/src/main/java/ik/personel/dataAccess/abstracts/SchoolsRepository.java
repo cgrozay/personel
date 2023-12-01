@@ -9,6 +9,6 @@ import ik.personel.entities.concretes.School;
 
 public interface SchoolsRepository extends JpaRepository<School, Integer>{
 
-//	@Query("From School where department.id=:departmentId")
-//	List<School> findByDepartment(int departmentId);
+	//@Query("From School where department.id=:departmentId")
+	//List<School> findByDepartment(int departmentId);
 }

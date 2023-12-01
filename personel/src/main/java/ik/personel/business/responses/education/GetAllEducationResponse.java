@@ -1,5 +1,6 @@
 package ik.personel.business.responses.education;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,5 +11,5 @@ import lombok.NoArgsConstructor;
 public class GetAllEducationResponse {
 
 	private int id;
-	private String educationName;
+	private int educationId;
 }
