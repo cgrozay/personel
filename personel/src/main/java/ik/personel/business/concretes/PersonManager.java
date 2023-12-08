@@ -10,6 +10,7 @@ import ik.personel.business.requests.person.CreatePersonRequest;
 import ik.personel.business.requests.person.UpdatePersonRequest;
 import ik.personel.business.responses.person.GetAllPersonResponse;
 import ik.personel.business.responses.person.GetAllPersonsViewResponse;
+import ik.personel.business.responses.person.GetByCompanyCityTownPersonse;
 import ik.personel.business.responses.person.GetByNormIdPersonResponse;
 import ik.personel.core.utilities.mapper.ModelMapperService;
 import ik.personel.dataAccess.abstracts.PersonRepository;
@@ -73,6 +74,13 @@ public class PersonManager implements PersonService {
 				.map(person -> this.modelMapperService.forResponse().map(person, GetByNormIdPersonResponse.class))
 				.collect(Collectors.toList());
 		return getByNormIdPersonResponse;
+	}
+
+	@Override
+	public List<GetByCompanyCityTownPersonse> getByCompanyCityTownPersonses(String companyTitle, String cityName, String townName) {
+		List<PersonView> personViews=this.personViewRepository.findByCompanyAndCityAndTown(companyTitle, cityName, townName);
+		List<GetByCompanyCityTownPersonse> getAllPersonsViewResponses=personViews.stream().map(person->this.modelMapperService.forResponse().map(person, GetByCompanyCityTownPersonse.class)).collect(Collectors.toList());
+		return getAllPersonsViewResponses;
 	}
 
 }

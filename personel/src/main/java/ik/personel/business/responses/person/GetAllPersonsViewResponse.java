@@ -27,4 +27,5 @@ public class GetAllPersonsViewResponse {
 	private String titleName;
 	private String positionName;
 	private String normName;
+	private int normId;
 }

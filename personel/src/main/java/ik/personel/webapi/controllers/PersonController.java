@@ -17,6 +17,7 @@ import ik.personel.business.requests.person.CreatePersonRequest;
 import ik.personel.business.requests.person.UpdatePersonRequest;
 import ik.personel.business.responses.person.GetAllPersonResponse;
 import ik.personel.business.responses.person.GetAllPersonsViewResponse;
+import ik.personel.business.responses.person.GetByCompanyCityTownPersonse;
 import ik.personel.business.responses.person.GetByNormIdPersonResponse;
 import lombok.AllArgsConstructor;
 
@@ -32,7 +33,7 @@ public class PersonController {
 	List<GetAllPersonResponse> getAllPersonResponses(){
 		return this.personService.getAllPersonResponses();
 	}
-	@PostMapping
+	@PostMapping("/add")
 	@ResponseStatus(code = HttpStatus.CREATED)
 	public void add(CreatePersonRequest createPersonRequest) {
 		this.personService.add(createPersonRequest);
@@ -52,5 +53,9 @@ public class PersonController {
 	@GetMapping("/personview/{id}")
 	public List<GetByNormIdPersonResponse> getByNormIdPersonResponse(int id) {
 		return this.personService.getByNormIdPersonResponse(id);
+	}
+	@GetMapping("/personview/{companytitle}/{cityname}/{townname}")
+	public List<GetByCompanyCityTownPersonse> getByCompanyCityTownPersonses(String companyTitle,String cityName,String townName){
+		return this.personService.getByCompanyCityTownPersonses(companyTitle, cityName, townName);
 	}
 }

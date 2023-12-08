@@ -11,5 +11,5 @@ import lombok.NoArgsConstructor;
 public class GetAllEducationResponse {
 
 	private int id;
-	private int educationId;
+	private String educationName;
 }
